@@ -32,14 +32,31 @@ const getSleepHours =  day => {
   
   // get the actual sleep hours
   const getActualSleepHours = () => {
+    // total actual sleep hours
     totalSleep = getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday') 
     return totalSleep;
     }
   
+  // calculate ideal sleep hours for the whole week
     const getIdealSleepHours = () => {
       const idealHours = 9;
       return idealHours * 7;
     }
   
+  // calculate the sleep debt
   
-console.log(getActualSleepHours());
+  const calculateSleepDebt = () => {
+    actualSleepHours = getActualSleepHours();
+    idealSleepHours = getIdealSleepHours();
+  
+    if (actualSleepHours == idealSleepHours ){
+      console.log('Kudos! You got the perfect sleep hours');
+    }
+    else if( actualSleepHours > idealSleepHours ) {
+      console.log('You got more sleep than needed.');
+    }
+    else {
+      console.log('You really need to get some sleep.')
+    }
+  };
+  
