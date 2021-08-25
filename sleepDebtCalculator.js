@@ -4,7 +4,7 @@ const getSleepHours =  day => {
     day = day.toLowerCase();
     switch (day) {
       case 'monday':
-      return 8;
+      return 9;
       break;
       case 'tuesday':
       return 5;
@@ -60,4 +60,4 @@ const getSleepHours =  day => {
     }
   };
   
-  calculateSleepDebt
+  calculateSleepDebt();
