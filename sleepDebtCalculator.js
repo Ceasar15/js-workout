@@ -53,10 +53,11 @@ const getSleepHours =  day => {
       console.log('Kudos! You got the perfect sleep hours');
     }
     else if( actualSleepHours > idealSleepHours ) {
-      console.log('You got more sleep than needed.');
+      console.log(`You got ${actualSleepHours - idealSleepHours} hours more sleep than needed.`);
     }
     else {
-      console.log('You really need to get some sleep.')
+      console.log(`You had ${idealSleepHours - actualSleepHours} hours less of sleep. You really need to get some sleep.`)
     }
   };
   
+  calculateSleepDebt
