@@ -31,7 +31,14 @@ const getSleepHours =  day => {
   };
   
   // get the actual sleep hours
-  function getActualSleepHours(){
-    getSleepHours() 
-  }
+  const getActualSleepHours = () => {
+    getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday') }
+  
+  
+    const getIdealSleepHours = () => {
+      const idealHours = 9;
+      return idealHours * 7;
+    }
+  
+    
   
