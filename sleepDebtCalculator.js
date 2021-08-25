@@ -32,13 +32,14 @@ const getSleepHours =  day => {
   
   // get the actual sleep hours
   const getActualSleepHours = () => {
-    getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday') }
-  
+    totalSleep = getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday') 
+    return totalSleep;
+    }
   
     const getIdealSleepHours = () => {
       const idealHours = 9;
       return idealHours * 7;
     }
   
-    
   
+console.log(getActualSleepHours());
