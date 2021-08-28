@@ -27,13 +27,14 @@ const betterWords = storyWords.filter(word => {
 const totalWords = betterWords.forEach(word => {
 
   if( overusedWords[0] === word){
-    totalWords1 += 1
+    totalWords1 += 1;
+    betterWords.splice(word, 1)
   } 
   else if( overusedWords[1] === word ) {
-    totalWords2 += 1
+    totalWords2 += 1;
   }
   else if ( overusedWords[2] === word ){
-    totalWords3 += 1
+    totalWords3 += 1;
   }
 });
 
