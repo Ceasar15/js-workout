@@ -29,7 +29,7 @@ class Media {
         let ratingSum = this._ratings.reduce((currentSum, rating) => currentSum + rating, 0);
         const lengthOfArray = this._ratings.length
         let averageRating = ratingSum / lengthOfArray;
-        console.log(averageRating);
+        return averageRating;
     }
     addRating(rating) {
         return this._ratings.push(rating);
@@ -67,11 +67,24 @@ class Movie extends Media {
     }
 }
 
+// Book Instance
 const historyOfEverything = new Book('Bill Bryson', 'A Short of Nearly Everything', 544);
 historyOfEverything.toggleCheckOutStatus()
-console.log(historyOfEverything.toggleCheckOutStatus());
+console.log(historyOfEverything.isCheckedOut);
 
-let tryToggle = new Media('Babalola');
-console.log(tryToggle.toggleCheckOutStatus());
-tryToggle.addRating(4);
-tryToggle.getAverageRating();
+historyOfEverything.addRating(4)
+historyOfEverything.addRating(5)
+historyOfEverything.addRating(5)
+
+console.log(historyOfEverything.getAverageRating());
+
+// Movie Instance
+const speed = new Movie('Jan De Bont', 'Speed', 116);
+speed.toggleCheckOutStatus();
+console.log(speed.isCheckedOut);
+
+speed.addRating(1)
+speed.addRating(1)
+speed.addRating(5)
+
+console.log(speed.getAverageRating());
