@@ -70,8 +70,8 @@ function playGame() {
   userChoice = getUserChoice("bomb");
   console.log("User Choice: " + userChoice);
   computerChoice = getComputerChoice();
-  console.log("Computer Choice: " + computerChoice);
-  console.log(determineWinner(userChoice, computerChoice));
+          console.log("Computer Choice: " + computerChoice);
+              console.log(determineWinner(userChoice, computerChoice));
 }
 
 playGame();
