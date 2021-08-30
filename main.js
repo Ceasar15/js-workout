@@ -1,11 +1,6 @@
 // TODO: Add your import statements here.
-import { getRoles, getCompanies } from './modules/salaryData.js';
-
-
-import { getAverageSalaryByRole,
-getAverageSalaryByCompany,
-getSalaryAtCompany,
-getIndustryAverageSalary } from './modules/workAroundModule.js';
+import { getRoles, getCompanies } from './salaryData.js';
+import { getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary } from './workAroundModule.js';
 
 
 // TODO: Get the companies and roles using the salaryData module.
@@ -54,17 +49,18 @@ function renderInputButtons(labels, groupName) {
 
 function updateResults(){
   // Get the current selected company and role from the radio button inputs.
-  const company = document.querySelector("input[name='company']:checked").value;
-  const role = document.querySelector("input[name='role']:checked").value;
+  const companyRadiButton = document.querySelector("input[name='company']:checked");
+  const roleRadioButton = document.querySelector("input[name='role']:checked");
 
   // If either the company or role is unselected, return.
-  if (!company || !role) { return; }
-
+  if (!companyRadiButton || !roleRadioButton) { return; }
+    let company = companyRadiButton.value;
+    let role = roleRadioButton.value;
   // TODO: Use the workAroundModule functions to calculate the needed data.
 
   const averageSalaryByRole = getAverageSalaryByRole(role);
   const averageSalaryByCompany = getAverageSalaryByCompany(company);
-  const salary = getSalaryAtCompany(company);
+  const salary = getSalaryAtCompany(role, company);
   const industryAverageSalary = getIndustryAverageSalary(company);
 
   // Render them to the screen.
