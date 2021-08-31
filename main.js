@@ -1,6 +1,84 @@
-// TODO: Add your import statements here.
-import { getRoles, getCompanies } from './salaryData.js';
+// // TODO: Add your import statements here.
+// import { getRoles, getCompanies } from './salaryData.js';
 import { getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary } from './workAroundModule.js';
+
+
+// // TODO: Get the companies and roles using the salaryData module.
+// const companies = getCompanies();
+// const roles = getRoles();
+
+// // Create input buttons for every company and role represented in the data.
+// renderInputButtons(companies, 'company');
+// renderInputButtons(roles, 'role');
+
+// // This function will create a new <section> with radio
+// // inputs based on the data provided in the labels array.
+// function renderInputButtons(labels, groupName) {
+//   const container = document.createElement('section');
+//   container.setAttribute('id', `${groupName}Inputs`);
+
+//   let header = document.createElement('h3');
+//   header.innerText = `Select a ${groupName}`;
+//   container.appendChild(header);
+
+//   labels.forEach(label => { // For each label...
+//     // Create the radio input element.
+//     let divElement = document.createElement('div');
+//     divElement.setAttribute('class', 'option');
+
+//     let inputElement = document.createElement('input');
+//     inputElement.setAttribute('type', 'radio');
+//     inputElement.setAttribute('name', groupName);
+//     inputElement.setAttribute('value', label);
+//     divElement.appendChild(inputElement);
+
+//     // Create a label for that radio input element.
+//     let labelElement = document.createElement('label');
+//     labelElement.setAttribute('for', label);
+//     labelElement.innerText = label;
+//     divElement.appendChild(labelElement);
+
+//     // Update the results when the input is selected.
+//     inputElement.addEventListener('click', updateResults);
+
+//     container.appendChild(divElement);
+//   });
+
+//   document.querySelector('main').prepend(container);
+// }
+
+// function updateResults(){
+//   // Get the current selected company and role from the radio button inputs.
+//   const companyRadiButton = document.querySelector("input[name='company']:checked");
+//   const roleRadioButton = document.querySelector("input[name='role']:checked");
+
+//   // If either the company or role is unselected, return.
+//   if (!companyRadiButton || !roleRadioButton) { return; }
+//     let company = companyRadiButton.value;
+//     let role = roleRadioButton.value;
+//   // TODO: Use the workAroundModule functions to calculate the needed data.
+
+//   const averageSalaryByRole = getAverageSalaryByRole(role);
+//   const averageSalaryByCompany = getAverageSalaryByCompany(company);
+//   const salary = getSalaryAtCompany(role, company);
+//   const industryAverageSalary = getIndustryAverageSalary(company);
+
+//   // Render them to the screen.
+//   document.getElementById('salarySelected').innerText = `The salary for ${role}s at ${company} is \$${salary}`;
+//   document.getElementById('salaryAverageByRole').innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
+//   document.getElementById('salaryAverageByCompany').innerText = `The average salary at ${company} is \$${averageSalaryByCompany}`;
+//   document.getElementById('salaryAverageIndustry').innerText = `The average salary in the Tech industry is \$${industryAverageSalary}`;
+// }
+
+
+
+// TODO: Add your import statements here.
+import {
+    getRoles,
+    getCompanies
+} from './salaryData.js';
+// import { getAverageSalaryByRole,getAverageSalaryByCompany,
+// getSalaryAtCompany, getIndustryAverageSalary } from './modules/workAroundModule.js';
 
 
 // TODO: Get the companies and roles using the salaryData module.
@@ -14,61 +92,61 @@ renderInputButtons(roles, 'role');
 // This function will create a new <section> with radio
 // inputs based on the data provided in the labels array.
 function renderInputButtons(labels, groupName) {
-  const container = document.createElement('section');
-  container.setAttribute('id', `${groupName}Inputs`);
+    const container = document.createElement('section');
+    container.setAttribute('id', `${groupName}Inputs`);
 
-  let header = document.createElement('h3');
-  header.innerText = `Select a ${groupName}`;
-  container.appendChild(header);
+    let header = document.createElement('h3');
+    header.innerText = `Select a ${groupName}`;
+    container.appendChild(header);
 
-  labels.forEach(label => { // For each label...
-    // Create the radio input element.
-    let divElement = document.createElement('div');
-    divElement.setAttribute('class', 'option');
+    labels.forEach(label => { // For each label...
+        // Create the radio input element.
+        let divElement = document.createElement('div');
+        divElement.setAttribute('class', 'option');
 
-    let inputElement = document.createElement('input');
-    inputElement.setAttribute('type', 'radio');
-    inputElement.setAttribute('name', groupName);
-    inputElement.setAttribute('value', label);
-    divElement.appendChild(inputElement);
+        let inputElement = document.createElement('input');
+        inputElement.setAttribute('type', 'radio');
+        inputElement.setAttribute('name', groupName);
+        inputElement.setAttribute('value', label);
+        divElement.appendChild(inputElement);
 
-    // Create a label for that radio input element.
-    let labelElement = document.createElement('label');
-    labelElement.setAttribute('for', label);
-    labelElement.innerText = label;
-    divElement.appendChild(labelElement);
+        // Create a label for that radio input element.
+        let labelElement = document.createElement('label');
+        labelElement.setAttribute('for', label);
+        labelElement.innerText = label;
+        divElement.appendChild(labelElement);
 
-    // Update the results when the input is selected.
-    inputElement.addEventListener('click', updateResults);
+        // Update the results when the input is selected.
+        inputElement.addEventListener('click', updateResults);
 
-    container.appendChild(divElement);
-  });
+        container.appendChild(divElement);
+    });
 
-  document.querySelector('main').prepend(container);
+    document.querySelector('main').prepend(container);
 }
 
-function updateResults(){
-  // Get the current selected company and role from the radio button inputs.
-  const companyRadiButton = document.querySelector("input[name='company']:checked");
-  const roleRadioButton = document.querySelector("input[name='role']:checked");
+function updateResults() {
+    // Get the current selected company and role from the radio button inputs.
+    const companyRadiButton = document.querySelector("input[name='company']:checked");
+    const roleRadioButton = document.querySelector("input[name='role']:checked");
 
-  // If either the company or role is unselected, return.
-  if (!companyRadiButton || !roleRadioButton) { return; }
+    // If either the company or role is unselected, return.
+    if (!companyRadiButton || !roleRadioButton) {
+        return;
+    }
     let company = companyRadiButton.value;
     let role = roleRadioButton.value;
-  // TODO: Use the workAroundModule functions to calculate the needed data.
 
-  const averageSalaryByRole = getAverageSalaryByRole(role);
-  const averageSalaryByCompany = getAverageSalaryByCompany(company);
-  const salary = getSalaryAtCompany(role, company);
-  const industryAverageSalary = getIndustryAverageSalary(company);
+    // TODO: Use the workAroundModule functions to calculate the needed data.
 
-  // Render them to the screen.
-  document.getElementById('salarySelected').innerText = `The salary for ${role}s at ${company} is \$${salary}`;
-  document.getElementById('salaryAverageByRole').innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
-  document.getElementById('salaryAverageByCompany').innerText = `The average salary at ${company} is \$${averageSalaryByCompany}`;
-  document.getElementById('salaryAverageIndustry').innerText = `The average salary in the Tech industry is \$${industryAverageSalary}`;
+    const averageSalaryByRole = getAverageSalaryByRole(role);
+    const averageSalaryByCompany = getAverageSalaryByCompany(company);
+    const salary = getSalaryAtCompany(role, company);
+    const industryAverageSalary = getIndustryAverageSalary(company);
+
+    // Render them to the screen.
+    document.getElementById('salarySelected').innerText = `The salary for ${role}s at ${company} is \$${salary}`;
+    document.getElementById('salaryAverageByRole').innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
+    document.getElementById('salaryAverageByCompany').innerText = `The average salary at ${company} is \$${averageSalaryByCompany}`;
+    document.getElementById('salaryAverageIndustry').innerText = `The average salary in the Tech industry is \$${industryAverageSalary}`;
 }
-
-
-
