@@ -33,7 +33,7 @@ const store = {
    });
   };
   
-  const processPayment = (responseArray) => {
+const processPayment = (responseArray) => {
     const order = responseArray[0];
     const total = responseArray[1];
     return new Promise ((resolve, reject) => {
@@ -75,4 +75,6 @@ const store = {
     return Math.floor(Math.random() * 2000);
   }
   
-  module.exports = {checkInventory, processPayment, shipOrder};
+//   module.exports = {checkInventory, processPayment, shipOrder};
+
+  export default {checkInventory, processPayment, shipOrder};
