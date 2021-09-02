@@ -1,8 +1,8 @@
-const {checkInventory, processPayment, shipOrder} = require('./library.js');
+const {checkInventory, processPayment, shipOrder} = require('./multipleLibrary.js');
 
 const order = {
   items: [['sunglasses', 1], ['bags', 2]],
-  giftcardBalance: 0
+  giftcardBalance: 454
 };
 
 checkInventory(order)
