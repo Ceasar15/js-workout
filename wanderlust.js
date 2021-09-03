@@ -7,6 +7,7 @@ const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 const openWeatherKey = 'ca80818242fe9f903bbb9b3e6b7da50b';
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
+let $ = document.querySelector;
 // Page Elements
 const $input = $('#city');
 const $submit = $('#button');
